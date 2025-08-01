@@ -1,1 +1,69 @@
 
+package selenium_program;
+
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.chrome.ChromeDriver;
+
+
+public class it_check_box {
+
+	public static void main(String[] args) throws InterruptedException {
+
+		System.setProperty("webdriver.chrome.driver",
+				"D:\\Software testing training\\Applications download\\Selenium software\\chromedriver-win64\\chromedriver.exe");
+		WebDriver driver=new ChromeDriver();
+		driver.get("https://www.leafground.com/checkbox.xhtml");
+		
+		Thread.sleep(1000);
+		WebElement basic=driver.findElement(By.id("j_idt87:j_idt89"));
+		Thread.sleep(1000);
+		basic.click();
+		Thread.sleep(1000);
+		basic.click();
+		
+		Thread.sleep(1000);
+		WebElement Ajax=driver.findElement(By.id("j_idt87:j_idt91"));
+		Thread.sleep(1000);
+		Ajax.click();
+		Thread.sleep(1000);
+		Ajax.click();
+		
+		Thread.sleep(1000);
+		WebElement java=driver.findElement(By.xpath("//label[text()='Java']"));
+		java.click();
+		
+		Thread.sleep(1000);
+		WebElement tricheck=driver.findElement(By.id("j_idt87:ajaxTriState"));
+		Thread.sleep(1000);
+		tricheck.click();
+		Thread.sleep(1000);
+		tricheck.click();
+		Thread.sleep(1000);
+		tricheck.click();
+		
+		Thread.sleep(1000);
+		WebElement toggle=driver.findElement(By.id("j_idt87:j_idt100"));
+		Thread.sleep(1000);
+		toggle.click();
+		Thread.sleep(2000);
+		toggle.click();
+		
+		Thread.sleep(1000);
+		WebElement disabledCheckbox=driver.findElement(By.id("j_idt87:j_idt102"));
+		Boolean enabled = disabledCheckbox.isEnabled();
+		System.out.println(enabled);
+		
+		Thread.sleep(1000);
+		WebElement dropdown=driver.findElement(By.id("j_idt87:multiple"));
+		dropdown.click();
+		Thread.sleep(1000);
+		WebElement miami=driver.findElement(By.className("ui-chkbox-icon"));
+		miami.click();
+		Thread.sleep(1000);
+		driver.findElement(By.xpath("(//label[text()='Paris'][2])")).click();
+
+	
+}
+}
